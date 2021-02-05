@@ -76,6 +76,10 @@ class PetControllerV3
       key :tags, [
         'pets'
       ]
+      extension :'x-codeSamples' do
+        key :lang, 'JavaScript'
+        key :source, "console.log('Hello World!')"
+      end
       parameter do
         key :name, :limit
         key :in, :query
