@@ -39,6 +39,13 @@ module Swagger
           self.data[:servers] ||= []
           self.data[:servers] << Swagger::Blocks::Nodes::ServerNode.call(version: version, inline_keys: inline_keys, &block)
         end
+
+        def extension(name, inline_keys = nil, &block)
+          raise NotSupportedError unless is_openapi_3_0?
+
+          self.data[name] ||= []
+          self.data[name] << Swagger::Blocks::Nodes::VendorExtensionNode.call(version: version, inline_keys: inline_keys, &block)
+        end
       end
     end
   end

@@ -76,6 +76,12 @@
         "tags": [
           "pets"
         ],
+        "x-codeSamples": [
+          {
+            "lang": "JavaScript",
+            "source": "console.log('Hello World!')"
+          }
+        ],
         "parameters": [
           {
             "name": "limit",
