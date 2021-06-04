@@ -1,28 +1,19 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'swagger/blocks/version'
+# frozen_string_literal: true
+
+require_relative 'lib/swagger/blocks/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'swagger-blocks'
   spec.version       = Swagger::Blocks::VERSION
-  spec.authors       = ['Mike Fotinakis']
-  spec.email         = ['mike@fotinakis.com']
-  spec.summary       = %q{Define and serve live-updating Swagger JSON for Ruby apps.}
-  spec.description   = %q{}
-  spec.homepage      = 'https://github.com/fotinakis/swagger-blocks'
-  spec.license       = 'MIT'
-
-  spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.platform      = Gem::Platform::RUBY
+  spec.author        = 'AppFolio'
+  spec.email         = 'dev@appfolio.com'
+  spec.description   = 'Define and serve live-updating Swagger JSON for Ruby apps.'
+  spec.summary       = spec.description
+  spec.homepage      = 'https://github.com/appfolio/swagger-blocks'
+  spec.license       = 'Nonstandard'
+  spec.files         = Dir['**/*'].select { |f| f[%r{^(lib/|Gemfile$|Rakefile|README.md|.*gemspec)}] }
   spec.require_paths = ['lib']
-  spec.required_ruby_version = '>= 1.9.3'
-  
-  spec.metadata['allowed_push_host'] = 'https://rubygems.pkg.github.com/appfolio'
 
-  spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'pry'
+  spec.metadata['allowed_push_host'] = 'https://rubygems.pkg.github.com/appfolio'
 end
