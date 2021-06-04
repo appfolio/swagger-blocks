@@ -1,23 +1,18 @@
 version: 2.1
-orbs:
-  ruby: circleci/ruby@0.1.2
 
-jobs:
-  build:
-    docker:
-      - image: circleci/ruby:2.6.3
-        auth:
-          username: "$DOCKERHUB_USER"
-          password: "$DOCKERHUB_PASSWORD"
-    executor: ruby/default
-    steps:
-      - checkout
-      - run: sudo gem update --system
-      - run: bundle install
-      - run: bundle exec rspec
+orbs:
+   gem-tool: appfolio/gem-tool@volatile
 
 workflows:
   rc:
     jobs:
-      - build:
+      - gem-tool/checkout_bundle_install_appraisal_rspec:
+          name: test-ruby-271
           context: appfolio_test_context
+          executor_tag: gem-tool/ruby_base_271
+          gem_name: 'swagger/blocks'
+      - gem-tool/checkout_bundle_install_appraisal_rspec:
+          name: test-ruby-263
+          context: appfolio_test_context
+          executor_tag: gem-tool/ruby_base_263
+          gem_name: 'swagger/blocks'
