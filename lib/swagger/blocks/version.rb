@@ -1,5 +1,5 @@
 module Swagger
   module Blocks
-    VERSION = '3.0.0.appfolio.1'
+    VERSION = '3.0.0.pre.1'
   end
 end
