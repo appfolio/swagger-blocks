@@ -1,18 +1,19 @@
 version: 2.1
 
 orbs:
-   gem-tool: appfolio/gem-tool@volatile
+  gem-tool: appfolio/gem-tool@volatile
 
 workflows:
   rc:
     jobs:
-      - gem-tool/checkout_bundle_install_appraisal_rspec:
-          name: test-ruby-271
+      - gem-tool/rake_test:
+          name: test_ruby-<< matrix.ruby_version >>
           context: appfolio_test_context
-          executor_tag: gem-tool/ruby_base_271
+          executor_tag: ruby
           gem_name: 'swagger/blocks'
-      - gem-tool/checkout_bundle_install_appraisal_rspec:
-          name: test-ruby-263
-          context: appfolio_test_context
-          executor_tag: gem-tool/ruby_base_263
-          gem_name: 'swagger/blocks'
+          matrix:
+            parameters:
+              ruby_version:
+                - '3.1.0'
+                - '2.7.5'
+                - '2.6.9'

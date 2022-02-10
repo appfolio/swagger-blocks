@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 case RUBY_VERSION
-when '2.6.3', '2.7.1'
+when '2.6.9', '2.7.5', '3.1.0'
   appraise "ruby-#{RUBY_VERSION}" do
   end
 else
