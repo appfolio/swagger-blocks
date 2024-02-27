@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  title: swagger-blocks
+  description: This catalog entity description has been auto-generated
+  tags: []
+  annotations:
+    appfolio.com/package-location: url:https://github.com/appfolio/swagger-blocks/pkgs/rubygems/swagger-blocks
+    appfolio.com/package-type: gem
+  name: swagger-blocks
+spec:
+  type: library
+  lifecycle: unknown
+  owner: engineering
