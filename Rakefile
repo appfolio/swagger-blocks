@@ -16,7 +16,7 @@ require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:test)
 
 namespace :test do
-  AfGems::RubyAppraisalTask.new(:all, ['ruby-2.6.9', 'ruby-2.7.5', 'ruby-3.1.0'])
+  AfGems::RubyAppraisalTask.new(:all, ['ruby-3.3.10', 'ruby-3.4.8', 'ruby-4.0.1'])
 end
 
 task default: :test
