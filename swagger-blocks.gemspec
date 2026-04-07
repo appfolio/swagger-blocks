@@ -12,8 +12,9 @@ Gem::Specification.new do |spec|
   spec.summary       = spec.description
   spec.homepage      = 'https://github.com/appfolio/swagger-blocks'
   spec.license       = 'Nonstandard'
-  spec.files         = Dir['**/*'].select { |f| f[%r{^(lib/|Gemfile$|Rakefile|README.md|.*gemspec)}] }
+  spec.files         = Dir['**/*'].select { |f| f[%r{^(lib/|Gemfile$|Rakefile|README.md|swagger\-blocks\.gemspec)}] }
   spec.require_paths = ['lib']
+  spec.required_ruby_version = Gem::Requirement.new('< 4.1')
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.pkg.github.com/appfolio'
 end

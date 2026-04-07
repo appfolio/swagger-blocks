@@ -1,25 +1,12 @@
-*.gem
-*.rbc
-.bundle
-.config
-.yardoc
-Gemfile.lock
-InstalledFiles
-_yardoc
-coverage
-doc/
-lib/bundler/man
-pkg
-rdoc
-spec/reports
-test/tmp
-test/version_tmp
-tmp
-*.bundle
-*.so
-*.o
-*.a
-mkmf.log
+/.bundle/
+/coverage/
+/pkg/
+/tmp/
 
-gemfiles/.bundle/
-gemfiles/*.gemfile.lock
+# Only generate Appraisal gemfiles on CI
+/gemfiles/
+
+# Ignore generated files
+Gemfile.lock
+*.log
+*.gem
